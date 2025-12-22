@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Identity;
 using TaskManagementSystem.Application.DTOs.Auth;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
@@ -10,13 +9,16 @@ public sealed class AuthService
 {
     private readonly IUserRepository _users;
     private readonly ITokenService _tokens;
-    private readonly PasswordHasher<User> _passwordHasher;
-
-    public AuthService(IUserRepository users, ITokenService tokens)
+    private readonly IPasswordHasher _passwordHasher;
+    
+    public AuthService(
+        IUserRepository users,
+        ITokenService tokens,
+        IPasswordHasher passwordHasher)
     {
         _users = users;
         _tokens = tokens;
-        _passwordHasher = new PasswordHasher<User>();
+        _passwordHasher = passwordHasher;
     }
 
     public async Task<AuthResponseDto> RegisterAsync(RegisterRequestDto request)
@@ -32,7 +34,7 @@ public sealed class AuthService
         var user = new User(email: email, passwordHash: "TEMP_HASH", role: UserRole.User);
         
         // 3) password hash
-        var hash = _passwordHasher.HashPassword(user, request.Password);
+        var hash = _passwordHasher.Hash(request.Password);
         user.SetPasswordHash(hash);
         
         // 4) record
@@ -63,8 +65,8 @@ public sealed class AuthService
         if (!user.IsActive)
             throw new InvalidOperationException("User is deactivated.");
         
-        var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, request.Password);
-        if (result == PasswordVerificationResult.Failed)
+        var result = _passwordHasher.Verify( user.PasswordHash, request.Password);
+        if (!_passwordHasher.Verify(user.PasswordHash, request.Password))
             throw new InvalidOperationException("Invalid credentials.");
         
         var token = _tokens.CreateAccessToken(user);
