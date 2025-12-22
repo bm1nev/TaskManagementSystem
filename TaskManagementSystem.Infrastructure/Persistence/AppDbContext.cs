@@ -9,7 +9,7 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
-    
+
     public DbSet<User> Users => Set<User>();
     public DbSet<Project> Projects => Set<Project>();
     public DbSet<TaskItem> Tasks => Set<TaskItem>();
@@ -19,7 +19,7 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        
+
         ConfigureUsers(modelBuilder);
         ConfigureProjects(modelBuilder);
         ConfigureTasks(modelBuilder);
@@ -32,19 +32,22 @@ public class AppDbContext : DbContext
         var e = modelBuilder.Entity<User>();
 
         e.ToTable("Users");
-        
+
         e.HasKey(x => x.Id);
-        
-        e.Property(x => x.Id)
+
+        e.Property(x => x.Email)
             .IsRequired()
             .HasMaxLength(256);
-        
+
         e.HasIndex(x => x.Email)
             .IsUnique();
-        
+
         e.Property(x => x.PasswordHash)
             .IsRequired()
             .HasMaxLength(512);
+
+        e.Property(x => x.Role)
+            .IsRequired();
 
         e.Property(x => x.IsActive)
             .IsRequired();
@@ -56,24 +59,24 @@ public class AppDbContext : DbContext
     private static void ConfigureProjects(ModelBuilder modelBuilder)
     {
         var e = modelBuilder.Entity<Project>();
-        
+
         e.ToTable("Projects");
-        
+
         e.HasKey(x => x.Id);
-        
+
         e.Property(x => x.Name)
             .IsRequired()
-            .HasMaxLength(256);
-        
+            .HasMaxLength(200);
+
         e.Property(x => x.Description)
-            .HasMaxLength(2500);
+            .HasMaxLength(2000);
 
         e.Property(x => x.OwnerId)
             .IsRequired();
 
         e.Property(x => x.CreatedAtUtc)
             .IsRequired();
-        
+
         e.HasOne<User>()
             .WithMany()
             .HasForeignKey(x => x.OwnerId)
@@ -85,34 +88,34 @@ public class AppDbContext : DbContext
     private static void ConfigureTasks(ModelBuilder modelBuilder)
     {
         var e = modelBuilder.Entity<TaskItem>();
-        
+
         e.ToTable("Tasks");
-        
+
         e.HasKey(x => x.Id);
 
         e.Property(x => x.Title)
             .IsRequired()
-            .HasMaxLength(256);
-        
+            .HasMaxLength(300);
+
         e.Property(x => x.Description)
-            .HasMaxLength(5000);
+            .HasMaxLength(4000);
 
         e.Property(x => x.Status)
             .IsRequired();
-        
+
         e.Property(x => x.ProjectId)
             .IsRequired();
 
         e.Property(x => x.DueDateUtc);
-        
+
         e.Property(x => x.CreatedAtUtc)
             .IsRequired();
-        
+
         e.HasOne<Project>()
             .WithMany()
             .HasForeignKey(x => x.ProjectId)
             .OnDelete(DeleteBehavior.Cascade);
-        
+
         e.HasIndex(x => x.ProjectId);
         e.HasIndex(x => x.Status);
     }
@@ -120,83 +123,85 @@ public class AppDbContext : DbContext
     private static void ConfigureTaskAssignments(ModelBuilder modelBuilder)
     {
         var e = modelBuilder.Entity<TaskAssignment>();
-        
+
         e.ToTable("TaskAssignments");
-        
+
         e.HasKey(x => x.Id);
-        
+
         e.Property(x => x.TaskId)
             .IsRequired();
 
         e.Property(x => x.UserId)
             .IsRequired();
-        
-        e.Property(x=> x.AssignedAtUtc)
+
+        e.Property(x => x.AssignedAtUtc)
             .IsRequired();
-        
-        e.Property(x=> x.CreatedAtUtc)
+
+        e.Property(x => x.CreatedAtUtc)
             .IsRequired();
-        
+
         e.HasOne<TaskItem>()
             .WithMany()
             .HasForeignKey(x => x.TaskId)
             .OnDelete(DeleteBehavior.Cascade);
-        
+
         e.HasOne<User>()
             .WithMany()
             .HasForeignKey(x => x.UserId)
             .OnDelete(DeleteBehavior.Cascade);
-        
+
         e.HasIndex(x => new { x.TaskId, x.UserId })
             .IsUnique();
-        
-        e.HasIndex(x=> x.UserId);
+
+        e.HasIndex(x => x.UserId);
     }
-    
+
     private static void ConfigureProjectMembers(ModelBuilder modelBuilder)
     {
         var e = modelBuilder.Entity<ProjectMember>();
-        
+
         e.ToTable("ProjectMembers");
-        
+
         e.HasKey(x => x.Id);
-        
+
         e.Property(x => x.ProjectId)
             .IsRequired();
-        
+
         e.Property(x => x.UserId)
             .IsRequired();
-        
+
         e.Property(x => x.Role)
             .IsRequired();
 
         e.Property(x => x.InvitedByUserId);
-        
+
         e.Property(x => x.Note)
-            .HasMaxLength(1024);
-        
+            .HasMaxLength(1000);
+
+        e.Property(x => x.JoinedAtUtc)
+            .IsRequired();
+
         e.Property(x => x.CreatedAtUtc)
             .IsRequired();
-        
+
         e.HasOne<Project>()
             .WithMany()
             .HasForeignKey(x => x.ProjectId)
             .OnDelete(DeleteBehavior.Cascade);
-        
+
         e.HasOne<User>()
             .WithMany()
             .HasForeignKey(x => x.UserId)
             .OnDelete(DeleteBehavior.Cascade);
-        
+
         e.HasOne<User>()
             .WithMany()
             .HasForeignKey(x => x.InvitedByUserId)
             .OnDelete(DeleteBehavior.Restrict);
-        
-        e.HasIndex( x => new { x.ProjectId, x.UserId } )
+
+        e.HasIndex(x => new { x.ProjectId, x.UserId })
             .IsUnique();
 
         e.HasIndex(x => x.UserId);
     }
 }
-

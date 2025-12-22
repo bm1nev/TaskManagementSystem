@@ -29,7 +29,7 @@ public class User : BaseEntity
         if (string.IsNullOrWhiteSpace(email))
             throw new ArgumentException("Email is required.", nameof(email));
         
-        Email = Email.Trim().ToLowerInvariant();
+        Email = email.Trim().ToLowerInvariant();
     }
 
     public void SetPasswordHash(string passwordHash)
