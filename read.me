@@ -1,0 +1,173 @@
+0) Цел и граници (scope)
+
+Цел: REST Web API за управление на проекти и задачи с потребители, роли и автентикация (JWT).
+Включва: Users, Projects, Tasks, Assignments, Status, RBAC (User/Admin), Swagger.
+Не включва (за MVP): UI, realtime (SignalR), file attachments, comments, notifications.
+
+1) Архитектура и слоеве (скелет)
+
+Deliverable: Solution с 4 проекта и зависимости (UI в Rider), без бизнес код още.
+
+Слоеве
+
+Domain: Entities, Enums, бизнес правила (без EF, без JWT, без Web)
+
+Application: DTOs, Interfaces (contracts), Services (use-cases), validation, errors
+
+Infrastructure: EF Core DbContext, repositories implementations, JWT helpers (ако решим)
+
+WebApi: Controllers, Swagger, JWT config, DI wiring, Middlewares
+
+Критерии: Domain няма reference към никой друг слой.
+
+2) Домейн модел (бизнес модел + правила)
+
+Deliverable: Чисти Domain класове + Enums, без база.
+
+Entities
+
+User (Id, Email, PasswordHash, Role, CreatedAt, IsActive)
+
+Project (Id, Name, Description, OwnerId, CreatedAt)
+
+TaskItem (Id, Title, Description, Status, Priority?, DueDate?, ProjectId, CreatedAt)
+
+TaskAssignment (TaskId, UserId, AssignedAt) (или 1 task = 1 assignee за MVP — ще го решим в кода)
+
+Enums
+
+TaskStatus: Open / InProgress / Done
+
+UserRole: User / Admin
+
+Бизнес правила (пример)
+
+Task не може да е Done ако няма assignee (ако го изберем)
+
+Само член/owner на project може да вижда задачите му
+
+Admin може всичко
+
+3) Persistence модел (EF Core + SQL Server)
+
+Deliverable: DbContext + конфигурации + миграции + база.
+
+Infrastructure/Persistence
+
+AppDbContext
+
+EF configurations (Fluent API)
+
+Индекси: уникален Email, foreign keys, cascade правила
+
+Seed (по желание): Admin user, демо проект
+
+Критерии: dotnet ef migrations (ще го правим през Rider tooling) + база се създава.
+
+4) Authentication & Authorization (JWT + роли)
+
+Deliverable: Register/Login + JWT + RBAC.
+
+Application
+
+AuthService
+
+DTOs: RegisterRequest, LoginRequest, AuthResponse
+
+Infrastructure/WebApi
+
+Password hashing (напр. ASP.NET Core PasswordHasher<T>)
+
+JWT token generation (claims: sub/userId, role, email)
+
+Политики/атрибути:
+
+[Authorize]
+
+[Authorize(Roles="Admin")]
+
+Критерии: Swagger може да тества endpoints с Bearer token.
+
+5) Use-cases за Projects (CRUD + access rules)
+
+Deliverable: Projects endpoints + business checks.
+
+Endpoints (пример)
+
+POST /api/projects (User)
+
+GET /api/projects (User: само неговите/където е член)
+
+GET /api/projects/{id} (User: ако има достъп)
+
+PUT /api/projects/{id} (Owner/Admin)
+
+DELETE /api/projects/{id} (Admin или Owner — ако решим)
+
+Критерии: Няма „leak“ на чужди проекти.
+
+6) Use-cases за Tasks (CRUD + статус + assign)
+
+Deliverable: Task управление по проект.
+
+Endpoints (пример)
+
+POST /api/projects/{projectId}/tasks
+
+GET /api/projects/{projectId}/tasks (filters: status, assignee, search)
+
+GET /api/tasks/{taskId}
+
+PUT /api/tasks/{taskId}
+
+PATCH /api/tasks/{taskId}/status
+
+POST /api/tasks/{taskId}/assign/{userId} (Owner/Admin или Project Manager ако добавим)
+
+DELETE /api/tasks/{taskId}
+
+Критерии: Status transition работи, assignment пази история (ако го изберем).
+
+7) Validation, Errors, DTO mapping, Clean API
+
+Deliverable: Консистентни отговори и проверки.
+
+Validation (минимум ръчно; по желание FluentValidation)
+
+Глобален exception handling middleware
+
+Standard error model: { traceId, errorCode, message, details }
+
+DTO mapping (ръчно или AutoMapper — за MVP по-добре ръчно)
+
+8) Swagger документация + примери
+
+Deliverable: Swagger “приятен” за ползване.
+
+JWT “Authorize” бутон
+
+XML comments за endpoints (по желание)
+
+Примери за request/response
+
+9) Тестове (по избор, но силно препоръчително)
+
+Deliverable: Минимум unit tests за Application services.
+
+AuthService (валидиране, login fail)
+
+Task status rules
+
+Access rules
+
+10) Финален polish и “реалистични” extras (ако остане време)
+
+Pagination (page, pageSize)
+
+Sorting (by CreatedAt, DueDate)
+
+Auditing (CreatedBy, UpdatedAt)
+
+Soft delete
+
+Refresh tokens (по-advanced)
