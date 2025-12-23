@@ -100,11 +100,14 @@ var app = builder.Build();
 // Migrate + Seed (Development only)
 if (app.Environment.IsDevelopment())
 {
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var passwordHasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
 
-    db.Database.Migrate();
-    await DbSeeder.SeedAsync(db);
+        await DbSeeder.SeedAsync(db, passwordHasher);
+    }
+
 
     app.UseSwagger();
     app.UseSwaggerUI();
