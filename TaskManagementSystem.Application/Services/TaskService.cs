@@ -22,7 +22,7 @@ public sealed class TaskService
         CreateTaskRequestDto request)
     {
         // 1) is project exists?
-        var project = await _projects.GetProjectAsync(projectId)
+        _ = await _projects.GetProjectAsync(projectId)
             ?? throw new InvalidOperationException($" Project {projectId} not found. ");
         
         // 2) is user a member?
@@ -65,5 +65,44 @@ public sealed class TaskService
             Status = t.Status,
             DueDateUtc = t.DueDateUtc
         }).ToList();
+    }
+
+    public async Task AssignUserAsync(
+        Guid taskId,
+        Guid currentUserId,
+        AssignUserToTaskRequestDto request)
+    {
+        var (projectId, exists) = await _tasks.GetProjectInfoAsync(taskId);
+        if (!exists)
+            throw new InvalidOperationException($"Task {taskId} not found.");
+
+        var member = await _projects.GetMemberAsync(projectId, currentUserId)
+                     ?? throw new InvalidOperationException("You are not a project member.");
+
+        if (member.Role is not (ProjectRole.Owner or ProjectRole.Manager))
+            throw new InvalidOperationException("Insufficient permissions.");
+
+        var assignment = new TaskAssignment(taskId, request.UserId);
+
+        await _tasks.AddAssignmentAsync(assignment);
+        await _tasks.SaveChangesAsync();
+    }
+
+    public async Task UnassignUserAsync(
+        Guid taskId,
+        Guid currentUserId,
+        Guid userId)
+    {
+        var task = await _tasks.GetByIdAsync(taskId)
+            ?? throw new InvalidOperationException($" Task {taskId} not found. ");
+        
+        var member = await _projects.GetMemberAsync(task.ProjectId, currentUserId)
+            ?? throw new InvalidOperationException("You are not a project member. ");
+        
+        if (member.Role is not (ProjectRole.Owner or ProjectRole.Manager))
+            throw new InvalidOperationException(" Insufficient permissions. ");
+        
+        task.UnassignUser(userId);
+        await _tasks.SaveChangesAsync();
     }
 }

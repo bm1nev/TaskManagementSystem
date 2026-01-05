@@ -20,7 +20,9 @@ public class TaskAssignment : BaseEntity
         if (userId == Guid.Empty)
             throw new ArgumentException("UserId is required", nameof(userId));
         
+        Id = Guid.NewGuid(); 
         TaskId = taskId;
         UserId = userId;
+        AssignedAtUtc = DateTime.UtcNow;
     }
 }

@@ -28,6 +28,30 @@ public sealed class TaskRepository : ITaskRepository
            .ToListAsync();
     }
     
+    public Task<TaskItem?> GetByIdAsync(Guid taskId)
+    {
+        return _db.Tasks
+            .Include(t=> t.Assignments)
+            .FirstOrDefaultAsync(t => t.Id == taskId);
+    }
+    
+    public async Task<(Guid ProjectId, bool Exists)> GetProjectInfoAsync(Guid taskId)
+    {
+        var info = await _db.Tasks
+            .AsNoTracking()
+            .Where(t => t.Id == taskId)
+            .Select(t => new { t.ProjectId })
+            .FirstOrDefaultAsync();
+
+        return info is null ? (Guid.Empty, false) : (info.ProjectId, true);
+    }
+
+    public Task AddAssignmentAsync(TaskAssignment assignment)
+    {
+        return _db.TaskAssignments.AddAsync(assignment).AsTask();
+    }
+
+    
     public Task SaveChangesAsync()
     {
        return _db.SaveChangesAsync();

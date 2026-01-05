@@ -27,6 +27,11 @@ public class AppDbContext : DbContext
         ConfigureTasks(modelBuilder);
         ConfigureTaskAssignments(modelBuilder);
         ConfigureProjectMembers(modelBuilder);
+        
+        modelBuilder.Entity<TaskAssignment>()
+            .Property(x => x.Id)
+            .ValueGeneratedOnAdd();
+
     }
 
     private static void ConfigureUsers(ModelBuilder modelBuilder)
