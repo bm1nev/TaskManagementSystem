@@ -90,17 +90,7 @@ public sealed class TaskService
         
         await _access.RequireMemberAsync(task.ProjectId, currentUserId);
 
-        var isPrivileged = false;
-        try
-        {
-            await _access.RequireOwnerOrManagerAsync(task.ProjectId, currentUserId);
-            isPrivileged = true;
-        }
-        catch (ForbiddenException)
-        {
-            isPrivileged = false;
-        }
-        
+        var isPrivileged = await _access.IsOwnerOrManagerAsync(task.ProjectId, currentUserId);
         var isAssignee = task.IsAssignedTo(currentUserId);
         
         if (!isPrivileged && !isAssignee)

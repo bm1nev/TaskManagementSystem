@@ -52,4 +52,16 @@ public sealed class ProjectAccessService
 
         return member;
     }
+
+    public async Task<bool> IsOwnerOrManagerAsync(Guid projectId, Guid userId)
+    {
+        if (projectId == Guid.Empty || userId == Guid.Empty)
+            return false;
+
+        var member = await _projects.GetMemberAsync(projectId, userId);
+        if (member is null)
+            return  false;
+        
+        return member.Role is ProjectRole.Owner or ProjectRole.Manager;
+    }
 }
