@@ -4,86 +4,13 @@
     <projectFile profileName="http">src/TaskManagementSystem.WebApi/TaskManagementSystem.WebApi.csproj</projectFile>
     <projectFile profileName="https">src/TaskManagementSystem.WebApi/TaskManagementSystem.WebApi.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="83b72928-9a4f-4c07-8535-33c7a6375d3e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Auth/AuthResponseDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Auth/LoginRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Auth/RegisterRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Projects/AddProjectMemberRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Projects/CreateProjectRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Projects/ProjectDetailsDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Projects/ProjectListItemDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Projects/ProjectMemberDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Tasks/AssignUserToTaskRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Tasks/ChangeTaskStatusRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Tasks/CreateTaskRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Tasks/TaskAssigneeDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Tasks/TaskListItemDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/DTOs/Users/CreateUserRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Exceptions/ForbiddenException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Exceptions/NotFoundException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Exceptions/ValidationException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Interfaces/IPasswordHasher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Interfaces/IProjectRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Interfaces/ITaskRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Interfaces/ITokenService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Interfaces/IUserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Services/AuthService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Services/ProjectAccessService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Services/ProjectMembersService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Services/ProjectService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Services/TaskService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/Services/UserAdminService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Application/TaskManagementSystem.Application.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Common/BaseEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Entities/Project.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Entities/ProjectMember.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Entities/TaskAssignment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Entities/TaskItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Entities/User.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Enums/ProjectRole.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Enums/TaskStatus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/Enums/UserRole.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Domain/TaskManagementSystem.Domain.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Auth/AspNetPasswordHasher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Auth/JwtOptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Auth/JwtTokenService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Migrations/20251222121408_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Migrations/20251222121408_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Migrations/20260107210904_FixTaskAssignmentIdGeneration.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Migrations/20260107210904_FixTaskAssignmentIdGeneration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Persistence/Configurations/TaskAssignmentConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Persistence/Configurations/TaskItemConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Repositories/ProjectRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Repositories/TaskRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Repositories/UserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/Seeding/DbSeeder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.Infrastructure/TaskManagementSystem.Infrastructure.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/AdminUsersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/AuthController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/ProjectMembersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/ProjectTasksController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/ProjectsController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/TaskAssigneesController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/TaskStatusController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Controllers/UsersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Middleware/GlobalExceptionMiddleware.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/Security/ClaimsPrincipalExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/TaskManagementSystem.WebApi.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/TaskManagementSystem.WebApi.csproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/TaskManagementSystem.WebApi.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.WebApi/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskManagementSystem.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TaskManagementSystem.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,8 +42,9 @@
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -127,20 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.TaskManagementSystem.WebApi: http.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.TaskManagementSystem.WebApi: http.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.TaskManagementSystem.WebApi: http">
     <configuration name="TaskManagementSystem.WebApi: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/TaskManagementSystem.WebApi.csproj" />
@@ -185,12 +117,14 @@
       <workItem from="1767827713820" duration="271000" />
       <workItem from="1767827999158" duration="103000" />
       <workItem from="1767828160273" duration="48000" />
+      <workItem from="1767828225736" duration="1907000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
