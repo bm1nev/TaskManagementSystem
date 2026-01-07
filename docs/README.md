@@ -38,8 +38,11 @@ Clean Architecture–inspired structure with clear separation of concerns.
 - │
 - ├── docs/
 - ├── README.md
-- └── .gitignore
-
+- ├── ARCHITECTURE.md
+- ├── AUTHENTICATION.md
+- ├── PERMISSIONS.md
+- ├── TASKS.md
+- └── API_FLOW.md
 
 ---
 
