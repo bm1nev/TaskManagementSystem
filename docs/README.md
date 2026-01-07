@@ -37,12 +37,12 @@ Clean Architecture–inspired structure with clear separation of concerns.
 - │ └── TaskManagementSystem.WebApi
 - │
 - ├── docs/
-- ├── README.md
-- ├── ARCHITECTURE.md
-- ├── AUTHENTICATION.md
-- ├── PERMISSIONS.md
-- ├── TASKS.md
-- └── API_FLOW.md
+- │ ├── README.md
+- │ ├── ARCHITECTURE.md
+- │ ├── AUTHENTICATION.md
+- │ ├── PERMISSIONS.md
+- │ ├── TASKS.md
+- │  └── API_FLOW.md
 
 ---
 
@@ -60,6 +60,7 @@ Detailed documentation describing how the system works:
 - [Authorization & Permissions](docs/PERMISSIONS.md)
 - [Task Management](docs/TASKS.md)
 - [API Request Flow](docs/API_FLOW.md)
+
 
 ---
 
