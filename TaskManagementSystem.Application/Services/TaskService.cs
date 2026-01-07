@@ -11,11 +11,13 @@ public sealed class TaskService
 {
     private readonly ITaskRepository _tasks;
     private readonly IProjectRepository _projects;
+    private readonly ProjectAccessService _access;
 
-    public TaskService(ITaskRepository tasks, IProjectRepository projects)
+    public TaskService(ITaskRepository tasks, IProjectRepository projects, ProjectAccessService access)
     {
         _tasks = tasks;
         _projects = projects;
+        _access = access;
     }
 
     public async Task<Guid> CreateAsync(
@@ -23,19 +25,10 @@ public sealed class TaskService
         Guid currentUserId,
         CreateTaskRequestDto request)
     {
-        // 1) is project exists?
-        _ = await _projects.GetProjectAsync(projectId)
-            ?? throw new NotFoundException($" Project {projectId} not found. ");
+        await _access.RequireProjectAsync(projectId);
         
-        // 2) is user a member?
-        var member = await _projects.GetMemberAsync(projectId, currentUserId)
-                     ?? throw new ForbiddenException($" You are not member in project {projectId}. ");
+        await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
         
-        // 3) permission 
-        if (member.Role is not (ProjectRole.Owner or ProjectRole.Manager))
-            throw new ForbiddenException(" Insufficient permissions. ");
-        
-        // 4) create task
         var task = new TaskItem(
             title: request.Title,
             projectId: projectId,
@@ -54,9 +47,7 @@ public sealed class TaskService
         Guid currentUserId)
     {
         // view = member
-        var member = await _projects.GetMemberAsync(projectId, currentUserId);
-        if (member is null)
-            throw new ForbiddenException(" You are not a project member. ");
+        await _access.RequireMemberAsync(projectId, currentUserId);
 
         return await _tasks.GetForProjectWithAssigneesAsync(projectId);
     }
@@ -66,19 +57,12 @@ public sealed class TaskService
         Guid currentUserId,
         AssignUserToTaskRequestDto request)
     {
-        var (projectId, exists) = await _tasks.GetProjectInfoAsync(taskId);
-        if (!exists)
-            throw new NotFoundException($"Task {taskId} not found.");
+        var task = await _tasks.GetByIdAsync(taskId)
+            ?? throw new NotFoundException($" Task {taskId} not found. ");
+        
+        await _access.RequireOwnerOrManagerAsync(task.ProjectId, currentUserId);
 
-        var member = await _projects.GetMemberAsync(projectId, currentUserId)
-                     ?? throw new ForbiddenException("You are not a project member.");
-
-        if (member.Role is not (ProjectRole.Owner or ProjectRole.Manager))
-            throw new ForbiddenException("Insufficient permissions.");
-
-        var assignment = new TaskAssignment(taskId, request.UserId);
-
-        await _tasks.AddAssignmentAsync(assignment);
+        task.AssignUser(request.UserId);
         await _tasks.SaveChangesAsync();
     }
 
@@ -90,11 +74,7 @@ public sealed class TaskService
         var task = await _tasks.GetByIdAsync(taskId)
             ?? throw new NotFoundException($" Task {taskId} not found. ");
         
-        var member = await _projects.GetMemberAsync(task.ProjectId, currentUserId)
-            ?? throw new ForbiddenException("You are not a project member. ");
-        
-        if (member.Role is not (ProjectRole.Owner or ProjectRole.Manager))
-            throw new ForbiddenException(" Insufficient permissions. ");
+        await _access.RequireOwnerOrManagerAsync(task.ProjectId, currentUserId);
         
         task.UnassignUser(userId);
         await _tasks.SaveChangesAsync();
@@ -108,17 +88,25 @@ public sealed class TaskService
         var task = await _tasks.GetByIdAsync(taskId)
             ?? throw new NotFoundException($" Task {taskId} not found. ");
         
-        // member of the project
-        var membership = await _projects.GetMemberAsync(task.ProjectId, currentUserId)
-            ?? throw new ForbiddenException("You are not a project member. ");
+        await _access.RequireMemberAsync(task.ProjectId, currentUserId);
+
+        var isPrivileged = false;
+        try
+        {
+            await _access.RequireOwnerOrManagerAsync(task.ProjectId, currentUserId);
+            isPrivileged = true;
+        }
+        catch (ForbiddenException)
+        {
+            isPrivileged = false;
+        }
         
-        var isPrivileget = membership.Role is ProjectRole.Owner or ProjectRole.Manager;
         var isAssignee = task.IsAssignedTo(currentUserId);
         
-        if (!isPrivileget && !isAssignee)
+        if (!isPrivileged && !isAssignee)
             throw new ForbiddenException("Insufficient permissions.");
         
-        if (!Enum.TryParse<TaskStatus>(request.Status, out var newStatus))
+        if (!Enum.TryParse<TaskStatus>(request.Status, true, out var newStatus))
             throw new ValidationException($"Status {request.Status} is not valid.");
         
         task.ChangeStatus(newStatus);

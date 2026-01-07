@@ -10,11 +10,13 @@ public sealed class ProjectMembersService
 {
     private readonly IProjectRepository _projects;
     private readonly IUserRepository _users;
+    private readonly ProjectAccessService _access;
     
-    public ProjectMembersService(IProjectRepository projects, IUserRepository users)
+    public ProjectMembersService(IProjectRepository projects, IUserRepository users, ProjectAccessService access)
     {
         _projects = projects;
         _users = users;
+        _access =  access;
     }
 
     public async Task AddMemberAsync(
@@ -22,14 +24,11 @@ public sealed class ProjectMembersService
         Guid currentUserId,
         AddProjectMemberRequestDto request)
     {
-        var project = await _projects.GetProjectAsync(projectId)
-            ?? throw new NotFoundException($"Project with id {projectId} does not exist.");
+        await _access.RequireProjectAsync(projectId);
         
-        var currentMembership = await _projects.GetMemberAsync(projectId, currentUserId)
-            ?? throw new ForbiddenException("You are not a project member.");
-        
-        if (currentMembership.Role is not (ProjectRole.Owner or ProjectRole.Manager))
-            throw new ForbiddenException("Insufficient permissions.");
+        await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
+
+        await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
         
         var user = await _users.GetByIdAsync(request.UserId)
             ?? throw new NotFoundException($"User with id {request.UserId} does not exist.");

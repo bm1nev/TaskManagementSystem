@@ -38,6 +38,7 @@ builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<ProjectMembersService>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<TaskService>();
+builder.Services.AddScoped<ProjectAccessService>();
 
 // AuthN/AuthZ
 builder.Services

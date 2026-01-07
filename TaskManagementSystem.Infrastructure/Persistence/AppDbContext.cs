@@ -30,7 +30,7 @@ public class AppDbContext : DbContext
         
         modelBuilder.Entity<TaskAssignment>()
             .Property(x => x.Id)
-            .ValueGeneratedOnAdd();
+            .ValueGeneratedNever();
 
     }
 
@@ -134,6 +134,9 @@ public class AppDbContext : DbContext
         e.ToTable("TaskAssignments");
 
         e.HasKey(x => x.Id);
+        
+        e.Property(x => x.Id)
+            .ValueGeneratedNever();
 
         e.Property(x => x.TaskId)
             .IsRequired();
