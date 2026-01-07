@@ -8,4 +8,6 @@ public sealed class TaskListItemDto
     public string Title { get; init; } = string.Empty;
     public TaskStatus Status { get; init; }
     public DateTime? DueDateUtc { get; init; }
+
+    public List<TaskAssigneeDto> Assignees { get; init; } = new();
 }

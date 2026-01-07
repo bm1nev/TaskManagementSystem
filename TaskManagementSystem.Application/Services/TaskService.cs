@@ -57,16 +57,8 @@ public sealed class TaskService
         var member = await _projects.GetMemberAsync(projectId, currentUserId);
         if (member is null)
             throw new ForbiddenException(" You are not a project member. ");
-        
-        var tasks = await _tasks.GetForProjectAsync(projectId);
-            
-        return tasks.Select(t => new TaskListItemDto
-        {
-            Id = t.Id,
-            Title = t.Title,
-            Status = t.Status,
-            DueDateUtc = t.DueDateUtc
-        }).ToList();
+
+        return await _tasks.GetForProjectWithAssigneesAsync(projectId);
     }
 
     public async Task AssignUserAsync(

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TaskManagementSystem.Application.DTOs.Tasks;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Infrastructure.Persistence;
@@ -55,5 +56,34 @@ public sealed class TaskRepository : ITaskRepository
     public Task SaveChangesAsync()
     {
        return _db.SaveChangesAsync();
+    }
+
+    public Task<List<TaskListItemDto>> GetForProjectWithAssigneesAsync(Guid projectId)
+    {
+        return _db.Tasks
+            .AsNoTracking()
+            .Where(t=> t.ProjectId == projectId)
+            .OrderBy(t=> t.CreatedAtUtc)
+            .Select(t=> new TaskListItemDto
+            {
+                Id = t.Id,
+                Title = t.Title,
+                Status = t.Status,
+                DueDateUtc = t.DueDateUtc,
+                
+                Assignees = _db.TaskAssignments
+                    .Where(a=> a.TaskId == t.Id)
+                    .Join(
+                        _db.Users,
+                        a => a.UserId,
+                        u => u.Id,
+                        (a,u) => new TaskAssigneeDto
+                        {
+                            UserId = u.Id,
+                            Email = u.Email
+                        })
+                    .ToList()
+            })
+            .ToListAsync();
     }
 }
