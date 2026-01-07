@@ -1,4 +1,5 @@
 using TaskManagementSystem.Application.DTOs.Projects;
+using TaskManagementSystem.Application.Exceptions;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Domain.Enums;
@@ -22,23 +23,23 @@ public sealed class ProjectMembersService
         AddProjectMemberRequestDto request)
     {
         var project = await _projects.GetProjectAsync(projectId)
-            ?? throw new InvalidOperationException($"Project with id {projectId} does not exist.");
+            ?? throw new NotFoundException($"Project with id {projectId} does not exist.");
         
         var currentMembership = await _projects.GetMemberAsync(projectId, currentUserId)
-            ?? throw new InvalidOperationException("You are not a project member.");
+            ?? throw new ForbiddenException("You are not a project member.");
         
         if (currentMembership.Role is not (ProjectRole.Owner or ProjectRole.Manager))
-            throw new InvalidOperationException("Insufficient permissions.");
+            throw new ForbiddenException("Insufficient permissions.");
         
         var user = await _users.GetByIdAsync(request.UserId)
-            ?? throw new InvalidOperationException($"User with id {request.UserId} does not exist.");
+            ?? throw new NotFoundException($"User with id {request.UserId} does not exist.");
 
         var existing = await _projects.GetMemberAsync(projectId, user.Id);
             if (existing is not null)
             throw new InvalidOperationException("User already in project.");
             
         if (Enum.TryParse<ProjectRole>(request.Role, out var role))
-            throw new InvalidOperationException($"Role {request.Role} is not supported.");
+            throw new ValidationException($"Role {request.Role} is not supported.");
 
         var member = new ProjectMember(
             projectId: projectId,

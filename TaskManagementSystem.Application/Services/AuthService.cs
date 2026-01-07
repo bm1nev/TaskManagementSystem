@@ -1,4 +1,5 @@
 using TaskManagementSystem.Application.DTOs.Auth;
+using TaskManagementSystem.Application.Exceptions;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Domain.Enums;
@@ -28,7 +29,7 @@ public sealed class AuthService
         // 1) uniqueness
         var existing = await _users.GetByEmailAsync(email);
         if (existing is not null)
-            throw new InvalidOperationException("Email is already registered.");
+            throw new ValidationException("Email is already registered.");
         
         // 2) user create
         var user = new User(email: email, passwordHash: "TEMP_HASH", role: UserRole.User);
@@ -60,14 +61,14 @@ public sealed class AuthService
         
         var user = await _users.GetByEmailAsync(email);
         if (user is null)
-            throw new InvalidOperationException("Invalid credentials.");
+            throw new ValidationException("Invalid credentials.");
 
         if (!user.IsActive)
-            throw new InvalidOperationException("User is deactivated.");
+            throw new ForbiddenException("User is deactivated.");
         
         var result = _passwordHasher.Verify( user.PasswordHash, request.Password);
         if (!_passwordHasher.Verify(user.PasswordHash, request.Password))
-            throw new InvalidOperationException("Invalid credentials.");
+            throw new ValidationException("Invalid credentials.");
         
         var token = _tokens.CreateAccessToken(user);
         return new AuthResponseDto()

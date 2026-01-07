@@ -1,5 +1,6 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
+using TaskManagementSystem.Application.Exceptions;
 
 namespace TaskManagementSystem.WebApi.Middleware;
 
@@ -47,9 +48,13 @@ public sealed class GlobalExceptionMiddleware
     {
         return ex switch
         {
-            ArgumentException => ((int)HttpStatusCode.BadRequest, "Validation error"),
-            InvalidOperationException => ((int)HttpStatusCode.BadRequest, "Invalid operation"),
-            UnauthorizedAccessException => ((int)HttpStatusCode.Forbidden, "Forbidden"),
+            ValidationException => (StatusCodes.Status400BadRequest, "Validation error"),
+            NotFoundException => (StatusCodes.Status404NotFound, "Not found"),
+            ForbiddenException => (StatusCodes.Status403Forbidden, "Forbidden"),
+
+            ArgumentException => (StatusCodes.Status400BadRequest, "Validation error"),
+            InvalidOperationException => (StatusCodes.Status400BadRequest, "Invalid operation"),
+            UnauthorizedAccessException => (StatusCodes.Status403Forbidden, "Forbidden"),
 
             _ => ((int)HttpStatusCode.InternalServerError, "Server error")
         };
