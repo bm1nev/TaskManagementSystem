@@ -2,6 +2,7 @@ using TaskManagementSystem.Application.DTOs.Tasks;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Domain.Enums;
+using TaskStatus = TaskManagementSystem.Domain.Enums.TaskStatus;
 
 namespace TaskManagementSystem.Application.Services;
 
@@ -103,6 +104,31 @@ public sealed class TaskService
             throw new InvalidOperationException(" Insufficient permissions. ");
         
         task.UnassignUser(userId);
+        await _tasks.SaveChangesAsync();
+    }
+
+    public async Task ChangeStatusAsync(
+        Guid taskId,
+        Guid currentUserId,
+        ChangeTaskStatusRequestDto request)
+    {
+        var task = await _tasks.GetByIdAsync(taskId)
+            ?? throw new InvalidOperationException($" Task {taskId} not found. ");
+        
+        // member of the project
+        var membership = await _projects.GetMemberAsync(task.ProjectId, currentUserId)
+            ?? throw new InvalidOperationException("You are not a project member. ");
+        
+        var isPrivileget = membership.Role is ProjectRole.Owner or ProjectRole.Manager;
+        var isAssignee = task.IsAssignedTo(currentUserId);
+        
+        if (!isPrivileget && !isAssignee)
+            throw new InvalidOperationException("Insufficient permissions.");
+        
+        if (!Enum.TryParse<TaskStatus>(request.Status, out var newStatus))
+            throw new InvalidOperationException($"Status {request.Status} is not valid.");
+        
+        task.ChangeStatus(newStatus);
         await _tasks.SaveChangesAsync();
     }
 }
