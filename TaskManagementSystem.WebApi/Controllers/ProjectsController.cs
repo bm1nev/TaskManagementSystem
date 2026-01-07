@@ -33,4 +33,13 @@ public sealed class ProjectsController : ControllerBase
         var list = await _projects.GetMyProjectsAsync(userId);
         return Ok(list);
     }
+    
+    [HttpGet("{projectId:guid}")]
+    public async Task<IActionResult> Details(Guid projectId)
+    {
+        var currentUserId = User.GetUserId();
+        var dto = await _projects.GetDetailsAsync(projectId, currentUserId);
+        return Ok(dto);
+    }
+
 }

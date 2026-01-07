@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TaskManagementSystem.Application.DTOs.Projects;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Infrastructure.Persistence;
@@ -46,5 +47,59 @@ public sealed class ProjectRepository : IProjectRepository
     {
         return _db.ProjectMembers
             .FirstOrDefaultAsync(pm => pm.ProjectId == projectId && pm.UserId == userId);
+    }
+    
+    public async Task<ProjectDetailsDto?> GetDetailsAsync(Guid projectId)
+    {
+        var project = await _db.Projects
+            .AsNoTracking()
+            .Where(p => p.Id == projectId)
+            .Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Description,
+                p.OwnerId,
+                p.CreatedAtUtc
+            })
+            .FirstOrDefaultAsync();
+
+        if (project is null)
+            return null;
+
+        var members = await GetMembersAsync(projectId);
+
+        return new ProjectDetailsDto
+        {
+            Id = project.Id,
+            Name = project.Name,
+            Description = project.Description,
+            OwnerId = project.OwnerId,
+            CreatedAtUtc = project.CreatedAtUtc,
+            Members = members
+        };
+    }
+
+    public Task<List<ProjectMemberDto>> GetMembersAsync(Guid projectId)
+    {
+        return _db.ProjectMembers
+            .AsNoTracking()
+            .Where(pm => pm.ProjectId == projectId)
+            .Join(
+                _db.Users,
+                pm => pm.UserId,
+                u => u.Id,
+                (pm, u) => new ProjectMemberDto
+                {
+                    UserId = u.Id,
+                    Email = u.Email ?? string.Empty,
+                    Role = pm.Role.ToString(),
+                    InvitedByUserId = pm.InvitedByUserId,
+                    Note = pm.Note,
+                    JoinedAtUtc = pm.CreatedAtUtc
+                }
+            )
+            .OrderBy(x => x.Email)
+            .ToListAsync();
     }
 }

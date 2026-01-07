@@ -1,4 +1,5 @@
 using TaskManagementSystem.Application.DTOs.Projects;
+using TaskManagementSystem.Application.Exceptions;
 using TaskManagementSystem.Application.Interfaces;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Domain.Enums;
@@ -8,10 +9,12 @@ namespace TaskManagementSystem.Application.Services;
 public sealed class ProjectService
 {
     private readonly IProjectRepository _projects;
+    private readonly ProjectAccessService _access;
     
-    public ProjectService(IProjectRepository projects)
+    public ProjectService(IProjectRepository projects, ProjectAccessService access)
     {
-        _projects = projects;
+        _projects = projects ?? throw new ArgumentNullException(nameof(projects));
+        _access = access ?? throw new ArgumentNullException(nameof(access));
     }
 
     public async Task<Guid> CreateAsync(Guid currentUserId, CreateProjectRequestDto request)
@@ -54,4 +57,16 @@ public sealed class ProjectService
             CreatedAtUtc = p.CreatedAtUtc
         }).ToList();
     }
+    
+    public async Task<ProjectDetailsDto> GetDetailsAsync(Guid projectId, Guid currentUserId)
+    {
+        await _access.RequireMemberAsync(projectId, currentUserId);
+
+        var details = await _projects.GetDetailsAsync(projectId);
+        if (details is null)
+            throw new NotFoundException("Project not found.");
+
+        return details;
+    }
+
 }
