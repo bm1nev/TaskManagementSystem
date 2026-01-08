@@ -49,9 +49,24 @@ public class Project : BaseEntity
         name = (name ?? string.Empty).Trim();
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Project name is required.", nameof(name));
+        
+        if (name.Length > 200)
+            throw new ArgumentException("Project name is too long.", nameof(name));
 
         Name = name;
-        Description = string.IsNullOrWhiteSpace(description) ? null : description.Trim();
+
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            Description = null;
+        }
+        else
+        {
+            description = description.Trim();
+            if (description.Length > 2000)
+                throw  new ArgumentException("Project description is too long.", nameof(description));
+            
+            Description = description;
+        }
     }
     
 }
