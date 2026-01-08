@@ -55,11 +55,11 @@ Relational SQL database using EF Core Code-First with migrations and proper cons
 
 Detailed documentation describing how the system works:
 
-- [Architecture Overview](ARCHITECTURE.md)
-- [Authentication Flow](AUTHENTICATION.md)
-- [Authorization & Permissions](PERMISSIONS.md)
-- [Task Management](TASKS.md)
-- [API Request Flow](API_FLOW.md)
+- [Architecture Overview](https://github.com/bm1nev/TaskManagementSystem/blob/master/docs/ARCHITECTURE.md)
+- [Authentication Flow](https://github.com/bm1nev/TaskManagementSystem/blob/master/docs/AUTHENTICATION.md)
+- [Authorization & Permissions](https://github.com/bm1nev/TaskManagementSystem/blob/master/docs/PERMISSIONS.md)
+- [Task Management](https://github.com/bm1nev/TaskManagementSystem/blob/master/docs/TASKS.md)
+- [API Request Flow](https://github.com/bm1nev/TaskManagementSystem/blob/master/docs/API_FLOW.md)
 
 
 ---
