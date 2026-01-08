@@ -9,10 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83b72928-9a4f-4c07-8535-33c7a6375d3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +125,7 @@
       <workItem from="1767876487490" duration="2241000" />
       <workItem from="1767882441211" duration="1283000" />
       <workItem from="1767883735673" duration="4000" />
-      <workItem from="1767883742395" duration="1458000" />
+      <workItem from="1767883742395" duration="1851000" />
     </task>
     <task id="LOCAL-00001" summary="docs: fix architecture section and documentation paths">
       <option name="closed" value="true" />
@@ -185,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767883269668</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chore: apply EF Core migrations before seeding in Docker">
+      <option name="closed" value="true" />
+      <created>1767885305949</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767885305949</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +205,8 @@
     <MESSAGE value="Merge remote-tracking branch 'TaskManagementSystem/master'&#10;&#10;# Conflicts:&#10;#&#9;docs/README.md" />
     <MESSAGE value="chore: migrate EF Core setup from SQL Server to PostgreSQL (provider + DI + reset migrations)" />
     <MESSAGE value="feat: add initial PostgreSQL migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add initial PostgreSQL migrations" />
+    <MESSAGE value="chore: apply EF Core migrations before seeding in Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: apply EF Core migrations before seeding in Docker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
