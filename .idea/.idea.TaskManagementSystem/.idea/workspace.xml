@@ -9,85 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83b72928-9a4f-4c07-8535-33c7a6375d3e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/ref/TaskManagementSystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/ref/TaskManagementSystem.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/refint/TaskManagementSystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/refint/TaskManagementSystem.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/ref/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/ref/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/refint/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/refint/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/Migrations/20251222121408_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/Migrations/20251222121408_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/Migrations/20260107210904_FixTaskAssignmentIdGeneration.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/Migrations/20260107210904_FixTaskAssignmentIdGeneration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/TaskManagementSystem.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/TaskManagementSystem.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/ref/TaskManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/ref/TaskManagementSystem.Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/refint/TaskManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/refint/TaskManagementSystem.Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/TaskManagementSystem.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/TaskManagementSystem.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.WebApi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.WebApi.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/bin/Debug/net9.0/TaskManagementSystem.WebApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/ref/TaskManagementSystem.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/ref/TaskManagementSystem.WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/refint/TaskManagementSystem.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/refint/TaskManagementSystem.WebApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/TaskManagementSystem.WebApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/TaskManagementSystem.WebApi.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +119,7 @@
       <workItem from="1767828160273" duration="48000" />
       <workItem from="1767828225736" duration="3063000" />
       <workItem from="1767876487490" duration="2241000" />
-      <workItem from="1767882441211" duration="445000" />
+      <workItem from="1767882441211" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="docs: fix architecture section and documentation paths">
       <option name="closed" value="true" />
@@ -231,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767830439978</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="chore: migrate EF Core setup from SQL Server to PostgreSQL (provider + DI + reset migrations)">
+      <option name="closed" value="true" />
+      <created>1767882980721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767882980721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +173,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="docs: fix architecture section and documentation paths" />
     <MESSAGE value="Merge remote-tracking branch 'TaskManagementSystem/master'&#10;&#10;# Conflicts:&#10;#&#9;docs/README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'TaskManagementSystem/master'&#10;&#10;# Conflicts:&#10;#&#9;docs/README.md" />
+    <MESSAGE value="chore: migrate EF Core setup from SQL Server to PostgreSQL (provider + DI + reset migrations)" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: migrate EF Core setup from SQL Server to PostgreSQL (provider + DI + reset migrations)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
