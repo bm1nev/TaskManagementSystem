@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GGaUBZpKR4E=",
+  "dgSpecHash": "t4bIF52Yhsw=",
   "success": true,
   "projectFilePath": "A:\\Programming\\C#\\TaskManagementSystem\\src\\TaskManagementSystem.WebApi\\TaskManagementSystem.WebApi.csproj",
   "expectedPackageFiles": [
@@ -43,9 +43,12 @@
     "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.11\\microsoft.extensions.dependencyinjection.abstractions.9.0.11.nupkg.sha512",
     "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.dependencymodel\\9.0.0\\microsoft.extensions.dependencymodel.9.0.0.nupkg.sha512",
-    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.1\\microsoft.extensions.diagnostics.abstractions.8.0.1.nupkg.sha512",
-    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.1\\microsoft.extensions.hosting.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\9.0.0\\microsoft.extensions.diagnostics.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks\\9.0.0\\microsoft.extensions.diagnostics.healthchecks.9.0.0.nupkg.sha512",
+    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\9.0.0\\microsoft.extensions.diagnostics.healthchecks.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.entityframeworkcore\\9.0.0\\microsoft.extensions.diagnostics.healthchecks.entityframeworkcore.9.0.0.nupkg.sha512",
+    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0\\microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\9.0.0\\microsoft.extensions.hosting.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.identity.core\\9.0.0\\microsoft.extensions.identity.core.9.0.0.nupkg.sha512",
     "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0\\microsoft.extensions.logging.9.0.0.nupkg.sha512",
     "C:\\Users\\Borislav Minev\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
