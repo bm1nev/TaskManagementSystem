@@ -39,6 +39,7 @@ builder.Services.AddScoped<ProjectMembersService>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<TaskService>();
 builder.Services.AddScoped<ProjectAccessService>();
+builder.Services.AddScoped<ProjectMembersService>();
 
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<AppDbContext>("db");

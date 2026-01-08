@@ -107,4 +107,16 @@ public sealed class ProjectRepository : IProjectRepository
     {
         return _db.Projects.FirstOrDefaultAsync(p => p.Id == projectId);
     }
+
+    public Task<ProjectMember?> GetTrackedMemberAsync(Guid projectId, Guid userId)
+    {
+        return _db.ProjectMembers
+            .FirstOrDefaultAsync(pm => pm.ProjectId == projectId && pm.UserId == userId);
+    }
+
+    public Task DeleteMemberAsync(ProjectMember member)
+    {
+        _db.ProjectMembers.Remove(member);
+        return Task.CompletedTask;
+    }
 }

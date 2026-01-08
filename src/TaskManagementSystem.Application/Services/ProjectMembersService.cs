@@ -27,14 +27,12 @@ public sealed class ProjectMembersService
         await _access.RequireProjectAsync(projectId);
         
         await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
-
-        await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
         
         var user = await _users.GetByIdAsync(request.UserId)
             ?? throw new NotFoundException($"User with id {request.UserId} does not exist.");
 
         var existing = await _projects.GetMemberAsync(projectId, user.Id);
-            if (existing is not null)
+        if (existing is not null)
             throw new InvalidOperationException("User already in project.");
             
         if (Enum.TryParse<ProjectRole>(request.Role, out var role))
@@ -49,6 +47,32 @@ public sealed class ProjectMembersService
             );
         
         await _projects.AddMemberAsync(member);
+        await _projects.SaveChangesAsync();
+    }
+
+    public async Task RemoveMemberAsync(Guid projectId, Guid currentUserId, Guid userIdToRemove)
+    {
+        await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
+
+        var target = await _projects.GetMemberAsync(projectId, userIdToRemove)
+                     ?? throw new NotFoundException($"Member with id {userIdToRemove} does not exist.");
+
+        if (target.Role == ProjectRole.Owner)
+            throw new ValidationException("Owner cannot be removed.");
+
+        await _projects.DeleteMemberAsync(target);
+        await _projects.SaveChangesAsync();
+    }
+
+    public async Task LeaveAsync(Guid projectId, Guid currentUserId)
+    {
+        var member = await _projects.GetTrackedMemberAsync(projectId, currentUserId)
+                     ?? throw new ForbiddenException("You are not a project member.");
+        
+        if (member.Role == ProjectRole.Owner)
+            throw new ValidationException("Owner cannot leave the project.");
+        
+        await _projects.DeleteMemberAsync(member);
         await _projects.SaveChangesAsync();
     }
 }

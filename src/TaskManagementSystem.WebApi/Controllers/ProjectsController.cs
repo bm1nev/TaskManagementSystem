@@ -12,10 +12,12 @@ namespace TaskManagementSystem.WebApi.Controllers;
 public sealed class ProjectsController : ControllerBase
 {
     private readonly ProjectService _projects;
+    private readonly ProjectMembersService _members;
 
-    public ProjectsController(ProjectService projects)
+    public ProjectsController(ProjectService projects, ProjectMembersService members)
     {
         _projects = projects;
+        _members = members;
     }
 
     [HttpPost]
@@ -56,6 +58,22 @@ public sealed class ProjectsController : ControllerBase
     {
         var currentUserId = User.GetUserId();
         await _projects.UpdateAsync(projectId, currentUserId, request);
+        return NoContent();
+    }
+
+    [HttpDelete("{projectId:guid}/members/{userId:guid}")]
+    public async Task<IActionResult> RemoveMember(Guid projectId, Guid userId)
+    {
+        var currentUserId = User.GetUserId();
+        await _members.RemoveMemberAsync(projectId, currentUserId, userId);
+        return NoContent();
+    }
+
+    [HttpPost("{projectId:guid}/leave")]
+    public async Task<IActionResult> Leave(Guid projectId)
+    {
+        var currentUserId = User.GetUserId();
+        await _members.LeaveAsync(projectId, currentUserId);
         return NoContent();
     }
 
