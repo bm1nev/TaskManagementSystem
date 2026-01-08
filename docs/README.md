@@ -1,16 +1,19 @@
 # 🗂️ Task Management System – ASP.NET Core Web API
 
-Backend-focused Task Management System (mini Jira / Trello) built with **ASP.NET Core** and **Entity Framework Core**, demonstrating clean architecture, secure API design, and real-world business logic.
+A production-ready Task Management System built with .NET 9, ASP.NET Core Web API, PostgreSQL, EF Core 9, JWT Authentication, and Docker.
+
+The project demonstrates real-world backend architecture including authentication, authorization, database migrations & seeding, health checks, and containerized deployment.
 
 ---
 
 ## 🚀 Tech Stack
-- .NET 9
-- ASP.NET Core Web API
-- Entity Framework Core
-- SQL Server (SQLEXPRESS)
-- JWT Authentication
+- .NET 9 / ASP.NET Core Web API
+- Entity Framework Core 9
+- PostgreSQL 16
+- JWT Authentication & Authorization
+- Docker & Docker Compose
 - Swagger / OpenAPI
+- Health Checks
 
 ---
 
@@ -48,6 +51,9 @@ Clean Architecture–inspired structure with clear separation of concerns.
 
 ## 🗄️ Database
 Relational SQL database using EF Core Code-First with migrations and proper constraints.
+- PostgreSQL
+- EF Core migrations applied automatically on startup
+- Initial data seeding (admin user)
 
 ---
 
@@ -64,16 +70,44 @@ Detailed documentation describing how the system works:
 
 ---
 
-## 🛠️ Run Locally
+## 🐳 Run with Docker
+#### Prerequisites
+- Docker Desktop
+- Docker Compose
 
 ```
 git clone https://github.com/bm1nev/TaskManagementSystem.git
 
-dotnet ef database update
-dotnet run --project src/TaskManagementSystem.WebApi
+
+docker compose up -d --build
+```
+---
+
+## Services
+- Swagger UI: http://localhost:8080/swagger
+
+---
+
+## 🔑 Default Admin Account (Seeded)
+
+```
+Email: admin@tms.local
+Password: admin123!
+```
+⚠️ Used only for development / demo purposes.
+
+---
+
+## ❤️ Health Checks
+
+The API exposes health endpoints for monitoring and container orchestration:
+
+```
+GET /health  
+GET /health/ready
 ```
 
 ---
 
 ## 📌 License
-Educational and portfolio purposes only.
+This project is intended for educational and portfolio purposes.
