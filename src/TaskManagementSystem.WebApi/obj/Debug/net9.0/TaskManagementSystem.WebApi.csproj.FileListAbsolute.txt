@@ -306,3 +306,4 @@ A:\Programming\C#\TaskManagementSystem\src\TaskManagementSystem.WebApi\obj\Debug
 A:\Programming\C#\TaskManagementSystem\src\TaskManagementSystem.WebApi\obj\Debug\net9.0\ref\TaskManagementSystem.WebApi.dll
 A:\Programming\C#\TaskManagementSystem\src\TaskManagementSystem.WebApi\bin\Debug\net9.0\Npgsql.dll
 A:\Programming\C#\TaskManagementSystem\src\TaskManagementSystem.WebApi\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+A:\Programming\C#\TaskManagementSystem\src\TaskManagementSystem.WebApi\bin\Debug\net9.0\appsettings.Docker.json
