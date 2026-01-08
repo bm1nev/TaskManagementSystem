@@ -16,4 +16,6 @@ public interface IProjectRepository
     
     Task<ProjectDetailsDto?> GetDetailsAsync(Guid projectId);
     Task<List<ProjectMemberDto>> GetMembersAsync(Guid projectId);
+    
+    Task<Project?> GetTrackedByIdAsync(Guid projectId);
 }

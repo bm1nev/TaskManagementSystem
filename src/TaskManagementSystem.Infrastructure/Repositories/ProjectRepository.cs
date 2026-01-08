@@ -102,4 +102,9 @@ public sealed class ProjectRepository : IProjectRepository
             .OrderBy(x => x.Email)
             .ToListAsync();
     }
+
+    public Task<Project?> GetTrackedByIdAsync(Guid projectId)
+    {
+        return _db.Projects.FirstOrDefaultAsync(p => p.Id == projectId);
+    }
 }

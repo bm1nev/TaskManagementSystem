@@ -51,4 +51,12 @@ public sealed class ProjectsController : ControllerBase
         return Ok(members);
     }
 
+    [HttpPut("{projectId:guid}")]
+    public async Task<IActionResult> Update(Guid projectId, UpdateProjectRequestDto request)
+    {
+        var currentUserId = User.GetUserId();
+        await _projects.UpdateAsync(projectId, currentUserId, request);
+        return NoContent();
+    }
+
 }

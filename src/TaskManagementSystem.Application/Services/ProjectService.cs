@@ -77,4 +77,16 @@ public sealed class ProjectService
         return members;
     }
 
+    public async Task UpdateAsync(Guid projectId, Guid currentUserId, UpdateProjectRequestDto request)
+    {
+        await _access.RequireOwnerOrManagerAsync(projectId, currentUserId);
+        
+        var project = await _projects.GetTrackedByIdAsync(projectId)
+            ?? throw new NotFoundException("Project not found.");
+        
+        project.Update(request.Name, request.Description);
+        
+        await _projects.SaveChangesAsync();
+    }
+
 }

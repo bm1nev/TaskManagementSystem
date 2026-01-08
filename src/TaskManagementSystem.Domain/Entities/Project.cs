@@ -43,4 +43,15 @@ public class Project : BaseEntity
         
         return value.Trim();
     }
+
+    public void Update(string name, string? description)
+    {
+        name = (name ?? string.Empty).Trim();
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Project name is required.", nameof(name));
+
+        Name = name;
+        Description = string.IsNullOrWhiteSpace(description) ? null : description.Trim();
+    }
+    
 }
