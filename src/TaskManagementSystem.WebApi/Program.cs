@@ -40,6 +40,11 @@ builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<TaskService>();
 builder.Services.AddScoped<ProjectAccessService>();
 
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<AppDbContext>("db");
+
+
+
 // AuthN/AuthZ
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -136,5 +141,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHealthChecks("/health");
+app.MapHealthChecks("/health/ready");
 
 app.Run();
