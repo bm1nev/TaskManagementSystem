@@ -102,14 +102,11 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Migrate + Seed (Development only)
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("Docker"))
 {
     using (var scope = app.Services.CreateScope())
     {
-        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        var passwordHasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
-
-        await DbSeeder.SeedAsync(db, passwordHasher);
+        await ApplyMigrationsAndSeedAsync(app);
     }
 
 
@@ -117,9 +114,23 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+static async Task ApplyMigrationsAndSeedAsync(WebApplication app)
+{
+    using var scope =  app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    
+    await db.Database.MigrateAsync();
+    
+    var passwordHasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
+    await DbSeeder.SeedAsync(db, passwordHasher);
+}
+
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsEnvironment("Docker"))
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthentication();
 app.UseAuthorization();

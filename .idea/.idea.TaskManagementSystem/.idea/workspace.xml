@@ -9,20 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83b72928-9a4f-4c07-8535-33c7a6375d3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/appsettings.Docker.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaskManagementSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/Debug/net9.0/TaskManagementSystem.Application.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Application/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/Debug/net9.0/TaskManagementSystem.Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/Debug/net9.0/TaskManagementSystem.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/Debug/net9.0/TaskManagementSystem.WebApi.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManagementSystem.WebApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +127,7 @@
       <workItem from="1767876487490" duration="2241000" />
       <workItem from="1767882441211" duration="1283000" />
       <workItem from="1767883735673" duration="4000" />
-      <workItem from="1767883742395" duration="119000" />
+      <workItem from="1767883742395" duration="1458000" />
     </task>
     <task id="LOCAL-00001" summary="docs: fix architecture section and documentation paths">
       <option name="closed" value="true" />
