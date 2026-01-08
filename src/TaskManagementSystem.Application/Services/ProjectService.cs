@@ -10,7 +10,7 @@ public sealed class ProjectService
 {
     private readonly IProjectRepository _projects;
     private readonly ProjectAccessService _access;
-    
+
     public ProjectService(IProjectRepository projects, ProjectAccessService access)
     {
         _projects = projects ?? throw new ArgumentNullException(nameof(projects));
@@ -40,15 +40,15 @@ public sealed class ProjectService
         await _projects.AddMemberAsync(membership);
         await _projects.AddProjectAsync(project);
         await _projects.SaveChangesAsync();
-        
+
         return project.Id;
     }
-    
+
     public async Task<List<ProjectListItemDto>> GetMyProjectsAsync(Guid currentUserId)
     {
         var list = await _projects.GetProjectsForUserAsync(currentUserId);
-        
-        return list.Select(p=> new ProjectListItemDto
+
+        return list.Select(p => new ProjectListItemDto
         {
             Id = p.Id,
             Name = p.Name,
@@ -57,7 +57,7 @@ public sealed class ProjectService
             CreatedAtUtc = p.CreatedAtUtc
         }).ToList();
     }
-    
+
     public async Task<ProjectDetailsDto> GetDetailsAsync(Guid projectId, Guid currentUserId)
     {
         await _access.RequireMemberAsync(projectId, currentUserId);
@@ -67,6 +67,14 @@ public sealed class ProjectService
             throw new NotFoundException("Project not found.");
 
         return details;
+    }
+
+    public async Task<List<ProjectMemberDto>> GetMemberAsync(Guid projectId, Guid currentUserId)
+    {
+        await _access.RequireMemberAsync(projectId, currentUserId);
+        
+        var members = await _projects.GetMembersAsync(projectId);
+        return members;
     }
 
 }
