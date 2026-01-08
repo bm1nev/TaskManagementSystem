@@ -10,7 +10,6 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - dpkeys:/root/.aspnet/DataProtection-Keys
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d task_management"]
       interval: 5s
@@ -30,6 +29,8 @@ services:
       ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=task_management;Username=postgres;Password=postgres
     ports:
       - "8080:8080"
+    volumes:
+      - dpkeys:/root/.aspnet/DataProtection-Keys
 
 volumes:
   pgdata:
